@@ -11,6 +11,9 @@ const UserSchema = new mongoose.Schema(
       required: true,
       unique: true,
     },
+    result: {
+      type: Number,
+    },
   },
   { timeStamps: true }
 );

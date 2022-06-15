@@ -3,6 +3,7 @@ const app = express();
 const mongoose = require("mongoose");
 const userRouter = require("./routes/user");
 const quizzRouter = require("./routes/quizz");
+const cors = require("cors");
 
 mongoose
   .connect(
@@ -16,6 +17,7 @@ mongoose
   })
   .catch((err) => console.log(err));
 
+app.use(cors());
 app.use(express.json());
 
 app.use("/api/users", userRouter);

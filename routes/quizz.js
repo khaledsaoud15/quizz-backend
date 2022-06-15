@@ -20,7 +20,7 @@ router.get("/", async (req, res) => {
   try {
     const quizze = await Quizz.find();
     res.status(200).json(quizze);
-  } catch {
+  } catch (err) {
     res.status(500).json(err);
   }
 });

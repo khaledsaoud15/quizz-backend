@@ -3,6 +3,7 @@ const app = express();
 const mongoose = require("mongoose");
 const userRouter = require("./routes/user");
 const quizzRouter = require("./routes/quizz");
+const resultRouter = require("./routes/result");
 const cors = require("cors");
 
 mongoose
@@ -22,6 +23,7 @@ app.use(express.json());
 
 app.use("/api/users", userRouter);
 app.use("/api/quizzes", quizzRouter);
+app.use("/api/results", resultRouter);
 
 app.listen(4000, () => {
   console.log("listening on port 4000");
